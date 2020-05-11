@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argo ppv</title>
+    <script src="cookie_utils.js"></script>
+
+    <!-- material stuff -->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <style>
+        body {
+            margin: 10px;
+            padding: 10px 10px;
+        }
+
+        .mdc-text-field {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="login_form">
+        <label class="mdc-text-field mdc-text-field--outlined">
+            <input type="text" class="mdc-text-field__input" aria-labelledby="school_code_label" id="school_code">
+            <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="school_code_label">Codice scuola: </span>
+                </span>
+                <span class="mdc-notched-outline__trailing"></span>
+            </span>
+        </label>
+        <br />
+        <label class="mdc-text-field mdc-text-field--outlined">
+            <input type="text" class="mdc-text-field__input" aria-labelledby="username_label" id="username">
+            <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="username_label">Nome utente: </span>
+                </span>
+                <span class="mdc-notched-outline__trailing"></span>
+            </span>
+        </label>
+        <br />
+        <label class="mdc-text-field mdc-text-field--outlined">
+            <input type="password" class="mdc-text-field__input" aria-labelledby="password_label" id="password">
+            <span class="mdc-notched-outline">
+                <span class="mdc-notched-outline__leading"></span>
+                <span class="mdc-notched-outline__notch">
+                    <span class="mdc-floating-label" id="password_label">Password: </span>
+                </span>
+                <span class="mdc-notched-outline__trailing"></span>
+            </span>
+        </label>
+        <button class="mdc-button mdc-button--raised" id="login_btn" onclick="on_login_button_click()">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">lock</i>
+            <span class="mdc-button__label">LOG IN</span>
+        </button>
+
+        <div class="mdc-snackbar">
+            <div class="mdc-snackbar__surface">
+                <div class="mdc-snackbar__label" role="status" aria-live="polite">
+                    Impossibile fare il login, F.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="all_compiti" style="visibility: hidden;">
+        <button class="mdc-button mdc-button--raised" id="load_bacheca" onclick="on_bacheca_button_click()">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">search</i>
+            <span class="mdc-button__label">CARICA BACHECA</span>
+        </button>
+    </div>
+
+    <div id="all_ppv" style="visibility: hidden;">
+        <button class="mdc-button mdc-button--raised" id="load_bacheca" onclick="on_ppv_button_click()">
+            <div class="mdc-button__ripple"></div>
+            <i class="material-icons mdc-button__icon" aria-hidden="true">check_circle</i>
+            <span class="mdc-button__label">PRESA VISIONE A TUTTI</span>
+        </button>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="api.js"></script>
+</body>
+
+</html>
