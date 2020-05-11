@@ -115,6 +115,11 @@ function on_ppv_button_click() {
 }
 
 
+function on_logout_button_click() {
+    clear_cookies();
+    window.location.reload(true);
+}
+
 
 if (is_logged()) {
     document.getElementById("login_form").style.visibility = "hidden";
